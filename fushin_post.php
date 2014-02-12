@@ -11,7 +11,6 @@ $obj = json_decode($json, true);
 if ($obj === NULL) {
     return;
 }
-
 $posts[0] = $obj['results']['collection1'][0]['property2'];
 
 //2つ目
@@ -19,19 +18,14 @@ $posts[0] = $obj['results']['collection1'][0]['property2'];
 $json2 = file_get_contents("http://www.kimonolabs.com/api/8e73roqq?apikey=545c9d85d1f29d0b30b63d281e761220");
 // 文字化けするかもしれないのでUTF-8に変換
 $json2 = mb_convert_encoding($json2, 'UTF8', 'ASCII,JIS,UTF-8,EUC-JP,SJIS-WIN');
- 
 // オブジェクト毎にパース
 // trueを付けると連想配列として分解して格納してくれます。
 $obj2 = json_decode($json2, true);
- 
 // パースに失敗した時は処理終了
 if ($obj2 === NULL) {
     return;
 }
-
 error_log(json_encode($obj2['results']['collection1'][0]['property2']));
-//echo $obj2['results']['collection1'][0]['property2'];
-
 $posts[1] = $obj2['results']['collection1'][0]['property2'];
 $posts[2] = $obj2['results']['collection1'][1]['property2'];
 $posts[3] = $obj2['results']['collection1'][2]['property2'];
@@ -50,11 +44,9 @@ if ($obj3 === NULL) {
 }
 
 error_log(json_encode($obj3['results']['collection1'][0]['property2']));
-echo $obj3['results']['collection1'][0]['property2'];
-
 $posts[4] = $obj3['results']['collection1'][0]['property2'];
 
-//4つ目
+//4つ目（新宿）
 // ファイルからJSONを読み込み
 $json4 = file_get_contents("http://www.kimonolabs.com/api/cypcroq0?apikey=545c9d85d1f29d0b30b63d281e761220");
 // 文字化けするかもしれないのでUTF-8に変換
@@ -73,8 +65,178 @@ $posts[5] = $obj4['results']['collection1'][0]['property2'];
 $posts[6] = $obj4['results']['collection1'][1]['property2'];
 $posts[7] = $obj4['results']['collection1'][2]['property2'];
 
+//5つ目(文京)
+// ファイルからJSONを読み込み
+$json5 = file_get_contents("http://www.kimonolabs.com/api/ehxyfdig?apikey=545c9d85d1f29d0b30b63d281e761220");
+// 文字化けするかもしれないのでUTF-8に変換
+$json5 = mb_convert_encoding($json5, 'UTF8', 'ASCII,JIS,UTF-8,EUC-JP,SJIS-WIN');
+// オブジェクト毎にパース
+// trueを付けると連想配列として分解して格納してくれます。
+$obj5 = json_decode($json5, true);
+// パースに失敗した時は処理終了
+if ($obj5 === NULL) {
+    return;
+}
+error_log(json_encode($obj5['results']['collection1'][0]['property2']));
+echo $obj5['results']['collection1'][0]['property2'];
+$posts[5] = $obj5['results']['collection1'][0]['property2'];
+$posts[6] = $obj5['results']['collection1'][1]['property2'];
+$posts[7] = $obj5['results']['collection1'][2]['property2'];
+$posts[8] = $obj5['results']['collection1'][3]['property2'];
+$posts[9] = $obj5['results']['collection1'][4]['property2'];
+$posts[10] = $obj5['results']['collection1'][5]['property2'];
+
+//6つ目（品川）
+// ファイルからJSONを読み込み
+$json6 = file_get_contents("http://www.kimonolabs.com/api/6llpy3yg?apikey=545c9d85d1f29d0b30b63d281e761220");
+// 文字化けするかもしれないのでUTF-8に変換
+$json6 = mb_convert_encoding($json6, 'UTF8', 'ASCII,JIS,UTF-8,EUC-JP,SJIS-WIN');
+// オブジェクト毎にパース
+// trueを付けると連想配列として分解して格納してくれます。
+$obj6 = json_decode($json6, true);
+// パースに失敗した時は処理終了
+if ($obj6 === NULL) {
+    return;
+}
+error_log(json_encode($obj6['results']['collection1'][0]['property2']));
+echo $obj6['results']['collection1'][0]['property2'];
+$posts[11] = $obj6['results']['collection1'][0]['property2'];
+$posts[12] = $obj6['results']['collection1'][1]['property2'];
+$posts[13] = $obj6['results']['collection1'][2]['property2'];
+$posts[14] = $obj6['results']['collection1'][3]['property2'];
+$posts[15] = $obj6['results']['collection1'][4]['property2'];
+
+//7つ目（葛飾）
+// ファイルからJSONを読み込み
+$json7 = file_get_contents("http://www.kimonolabs.com/api/c1fcog4q?apikey=545c9d85d1f29d0b30b63d281e761220");
+// 文字化けするかもしれないのでUTF-8に変換
+$json7 = mb_convert_encoding($json7, 'UTF8', 'ASCII,JIS,UTF-8,EUC-JP,SJIS-WIN');
+// オブジェクト毎にパース
+// trueを付けると連想配列として分解して格納してくれます。
+$obj7 = json_decode($json7, true);
+// パースに失敗した時は処理終了
+if ($obj7 === NULL) {
+    return;
+}
+error_log(json_encode($obj7['results']['collection1'][0]['property2']));
+echo $obj7['results']['collection1'][0]['property2'];
+$posts[16] = $obj7['results']['collection1'][0]['property2'];
+$posts[17] = $obj7['results']['collection1'][1]['property2'];
+$posts[18] = $obj7['results']['collection1'][2]['property2'];
+
+//8つ目（墨田）
+// ファイルからJSONを読み込み
+$json8 = file_get_contents("http://www.kimonolabs.com/api/8m8p7cto?apikey=545c9d85d1f29d0b30b63d281e761220");
+// 文字化けするかもしれないのでUTF-8に変換
+$json8 = mb_convert_encoding($json8, 'UTF8', 'ASCII,JIS,UTF-8,EUC-JP,SJIS-WIN');
+// オブジェクト毎にパース
+// trueを付けると連想配列として分解して格納してくれます。
+$obj8 = json_decode($json8, true);
+// パースに失敗した時は処理終了
+if ($obj8 === NULL) {
+    return;
+}
+error_log(json_encode($obj8['results']['collection1'][0]['property2']));
+echo $obj8['results']['collection1'][0]['property2'];
+$posts[19] = $obj8['results']['collection1'][0]['property2'];
+$posts[20] = $obj8['results']['collection1'][1]['property2'];
+$posts[21] = $obj8['results']['collection1'][2]['property2'];
+
+//9つ目（江東）
+// ファイルからJSONを読み込み
+$json9 = file_get_contents("http://www.kimonolabs.com/api/a07kr1au?apikey=545c9d85d1f29d0b30b63d281e761220");
+// 文字化けするかもしれないのでUTF-8に変換
+$json9 = mb_convert_encoding($json9, 'UTF8', 'ASCII,JIS,UTF-8,EUC-JP,SJIS-WIN');
+// オブジェクト毎にパース
+// trueを付けると連想配列として分解して格納してくれます。
+$obj9 = json_decode($json9, true);
+// パースに失敗した時は処理終了
+if ($obj9 === NULL) {
+    return;
+}
+error_log(json_encode($obj9['results']['collection1'][0]['property2']));
+echo $obj9['results']['collection1'][0]['property2'];
+$posts[22] = $obj9['results']['collection1'][0]['property2'];
+$posts[23] = $obj9['results']['collection1'][1]['property2'];
+$posts[24] = $obj9['results']['collection1'][2]['property2'];
+
+//10つ目（中野）
+// ファイルからJSONを読み込み
+$json10 = file_get_contents("http://www.kimonolabs.com/api/der1vvs0?apikey=545c9d85d1f29d0b30b63d281e761220");
+// 文字化けするかもしれないのでUTF-8に変換
+$json10 = mb_convert_encoding($json10, 'UTF8', 'ASCII,JIS,UTF-8,EUC-JP,SJIS-WIN');
+// オブジェクト毎にパース
+// trueを付けると連想配列として分解して格納してくれます。
+$obj10 = json_decode($json10, true);
+// パースに失敗した時は処理終了
+if ($obj10 === NULL) {
+    return;
+}
+error_log(json_encode($obj10['results']['collection1'][0]['property2']));
+echo $obj10['results']['collection1'][0]['property2'];
+$posts[25] = $obj10['results']['collection1'][0]['property2'];
+$posts[26] = $obj10['results']['collection1'][1]['property2'];
+$posts[27] = $obj10['results']['collection1'][2]['property2'];
+
+//11つ目（豊島）
+// ファイルからJSONを読み込み
+$json11 = file_get_contents("http://www.kimonolabs.com/api/2j7s0lhg?apikey=545c9d85d1f29d0b30b63d281e761220");
+// 文字化けするかもしれないのでUTF-8に変換
+$json11 = mb_convert_encoding($json11, 'UTF8', 'ASCII,JIS,UTF-8,EUC-JP,SJIS-WIN');
+// オブジェクト毎にパース
+// trueを付けると連想配列として分解して格納してくれます。
+$obj11 = json_decode($json11, true);
+// パースに失敗した時は処理終了
+if ($obj11 === NULL) {
+    return;
+}
+error_log(json_encode($obj11['results']['collection1'][0]['property2']));
+echo $obj11['results']['collection1'][0]['property2'];
+$posts[28] = $obj11['results']['collection1'][0]['property2'];
+$posts[29] = $obj11['results']['collection1'][1]['property2'];
+
+//12つ目（台東）
+// ファイルからJSONを読み込み
+$json12 = file_get_contents("http://www.kimonolabs.com/api/2j7s0lhg?apikey=545c9d85d1f29d0b30b63d281e761220");
+// 文字化けするかもしれないのでUTF-8に変換
+$json12 = mb_convert_encoding($json12, 'UTF8', 'ASCII,JIS,UTF-8,EUC-JP,SJIS-WIN');
+// オブジェクト毎にパース
+// trueを付けると連想配列として分解して格納してくれます。
+$obj12 = json_decode($json12, true);
+// パースに失敗した時は処理終了
+if ($obj12 === NULL) {
+    return;
+}
+error_log(json_encode($obj12['results']['collection1'][0]['property2']));
+echo $obj12['results']['collection1'][0]['property2'];
+$posts[30] = $obj12['results']['collection1'][0]['property2'];
+$posts[31] = $obj12['results']['collection1'][1]['property2'];
+$posts[32] = $obj12['results']['collection1'][2]['property2'];
+$posts[33] = $obj12['results']['collection1'][3]['property2'];
+
+//13つ目（杉並）
+// ファイルからJSONを読み込み
+$json13 = file_get_contents("http://www.kimonolabs.com/api/bgw2o6ze?apikey=545c9d85d1f29d0b30b63d281e761220");
+// 文字化けするかもしれないのでUTF-8に変換
+$json13 = mb_convert_encoding($json13, 'UTF8', 'ASCII,JIS,UTF-8,EUC-JP,SJIS-WIN');
+// オブジェクト毎にパース
+// trueを付けると連想配列として分解して格納してくれます。
+$obj13 = json_decode($json13, true);
+// パースに失敗した時は処理終了
+if ($obj13 === NULL) {
+    return;
+}
+error_log(json_encode($obj13['results']['collection1'][0]['property2']));
+echo $obj13['results']['collection1'][0]['property2'];
+$posts[34] = $obj13['results']['collection1'][0]['property2'];
+$posts[35] = $obj13['results']['collection1'][1]['property2'];
+$posts[36] = $obj13['results']['collection1'][2]['property2'];
+$posts[37] = $obj13['results']['collection1'][3]['property2'];
+$posts[38] = $obj13['results']['collection1'][4]['property2'];
+
+
 //乱数発生
-$intmn = mt_rand(0,3);
+$intmn = mt_rand(0,33);
 echo "$intmn";
 
 // twitteroauth.phpを読み込む。パスはあなたが置いた適切な場所に変更してください
