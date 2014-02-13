@@ -12,8 +12,10 @@ if ($obj === NULL) {
 }
 for ($num=0; ; $num++) {
 	//error_log(json_encode($obj['results']['collection1'][$num]['property2']));
-	echo $obj['results']['collection1'][$num]['property2'];
-	//echo "<br />";
+	//echo $obj['results']['collection1'][$num]['property2'];
+	$posts[$num] = $obj['results']['collection1'][$num]['property2'];
+	echo $posts[$num];
+	echo "<br />";
 	if ($obj['results']['collection1'][$num]['property2'] == NULL) {
 		break;
 	}
