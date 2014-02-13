@@ -42,7 +42,6 @@ $obj3 = json_decode($json3, true);
 if ($obj3 === NULL) {
     return;
 }
-
 error_log(json_encode($obj3['results']['collection1'][0]['property2']));
 $posts[4] = $obj3['results']['collection1'][0]['property2'];
 
@@ -234,6 +233,27 @@ $posts[36] = $obj13['results']['collection1'][2]['property2'];
 $posts[37] = $obj13['results']['collection1'][3]['property2'];
 $posts[38] = $obj13['results']['collection1'][4]['property2'];
 
+//14つ目（板橋）
+// ファイルからJSONを読み込み
+$json14 = file_get_contents("http://www.kimonolabs.com/api/4g72zeio?apikey=545c9d85d1f29d0b30b63d281e761220");
+// 文字化けするかもしれないのでUTF-8に変換
+$json14 = mb_convert_encoding($json14, 'UTF8', 'ASCII,JIS,UTF-8,EUC-JP,SJIS-WIN');
+// オブジェクト毎にパース
+// trueを付けると連想配列として分解して格納してくれます。
+$obj14 = json_decode($json14, true);
+// パースに失敗した時は処理終了
+if ($obj14 === NULL) {
+    return;
+}
+for ($num = 0; ; $num++) {
+	$posnum = 39 + $num;
+	$posts[$posnum] = $obj14['results']['collection1'][$num]['property2'];
+	echo $posts[$posnum];
+	echo "<br />";
+	if ($obj14['results']['collection1'][$num]['property2'] == NULL) {
+		break;
+	}
+}
 
 //乱数発生
 $intmn = mt_rand(0,33);
