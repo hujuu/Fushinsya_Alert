@@ -25,7 +25,6 @@ $obj2 = json_decode($json2, true);
 if ($obj2 === NULL) {
     return;
 }
-error_log(json_encode($obj2['results']['collection1'][0]['property2']));
 $posts[1] = $obj2['results']['collection1'][0]['property2'];
 $posts[2] = $obj2['results']['collection1'][1]['property2'];
 $posts[3] = $obj2['results']['collection1'][2]['property2'];
@@ -57,9 +56,6 @@ $obj4 = json_decode($json4, true);
 if ($obj4 === NULL) {
     return;
 }
-error_log(json_encode($obj4['results']['collection1'][0]['property2']));
-echo $obj4['results']['collection1'][0]['property2'];
-
 $posts[5] = $obj4['results']['collection1'][0]['property2'];
 $posts[6] = $obj4['results']['collection1'][1]['property2'];
 $posts[7] = $obj4['results']['collection1'][2]['property2'];
@@ -77,7 +73,6 @@ if ($obj5 === NULL) {
     return;
 }
 error_log(json_encode($obj5['results']['collection1'][0]['property2']));
-echo $obj5['results']['collection1'][0]['property2'];
 $posts[5] = $obj5['results']['collection1'][0]['property2'];
 $posts[6] = $obj5['results']['collection1'][1]['property2'];
 $posts[7] = $obj5['results']['collection1'][2]['property2'];
