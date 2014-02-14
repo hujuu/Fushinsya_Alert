@@ -11,13 +11,16 @@ if ($obj === NULL) {
     return;
 }
 for ($num=0; ; $num++) {
+	if ($obj['results']['collection1'][$num]['property2'] == NULL) {
+		echo (count($posts));
+		break;
+	}
 	//error_log(json_encode($obj['results']['collection1'][$num]['property2']));
 	//echo $obj['results']['collection1'][$num]['property2'];
 	$posts[$num] = $obj['results']['collection1'][$num]['property2'];
 	echo $posts[$num];
+	echo (count($posts));
 	echo "<br />";
-	if ($obj['results']['collection1'][$num]['property2'] == NULL) {
-		break;
-	}
+
 }
 ?>
