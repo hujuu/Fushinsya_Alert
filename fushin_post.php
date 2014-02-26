@@ -93,7 +93,6 @@ if ($obj6 === NULL) {
     return;
 }
 error_log(json_encode($obj6['results']['collection1'][0]['property2']));
-echo $obj6['results']['collection1'][0]['property2'];
 $posts[11] = $obj6['results']['collection1'][0]['property2'];
 $posts[12] = $obj6['results']['collection1'][1]['property2'];
 $posts[13] = $obj6['results']['collection1'][2]['property2'];
@@ -113,7 +112,6 @@ if ($obj7 === NULL) {
     return;
 }
 error_log(json_encode($obj7['results']['collection1'][0]['property2']));
-echo $obj7['results']['collection1'][0]['property2'];
 $posts[16] = $obj7['results']['collection1'][0]['property2'];
 $posts[17] = $obj7['results']['collection1'][1]['property2'];
 $posts[18] = $obj7['results']['collection1'][2]['property2'];
@@ -131,7 +129,6 @@ if ($obj8 === NULL) {
     return;
 }
 error_log(json_encode($obj8['results']['collection1'][0]['property2']));
-echo $obj8['results']['collection1'][0]['property2'];
 $posts[19] = $obj8['results']['collection1'][0]['property2'];
 $posts[20] = $obj8['results']['collection1'][1]['property2'];
 $posts[21] = $obj8['results']['collection1'][2]['property2'];
@@ -149,7 +146,6 @@ if ($obj9 === NULL) {
     return;
 }
 error_log(json_encode($obj9['results']['collection1'][0]['property2']));
-echo $obj9['results']['collection1'][0]['property2'];
 $posts[22] = $obj9['results']['collection1'][0]['property2'];
 $posts[23] = $obj9['results']['collection1'][1]['property2'];
 $posts[24] = $obj9['results']['collection1'][2]['property2'];
@@ -167,7 +163,6 @@ if ($obj10 === NULL) {
     return;
 }
 error_log(json_encode($obj10['results']['collection1'][0]['property2']));
-echo $obj10['results']['collection1'][0]['property2'];
 $posts[25] = $obj10['results']['collection1'][0]['property2'];
 $posts[26] = $obj10['results']['collection1'][1]['property2'];
 $posts[27] = $obj10['results']['collection1'][2]['property2'];
@@ -202,7 +197,6 @@ if ($obj12 === NULL) {
     return;
 }
 error_log(json_encode($obj12['results']['collection1'][0]['property2']));
-echo $obj12['results']['collection1'][0]['property2'];
 $posts[30] = $obj12['results']['collection1'][0]['property2'];
 $posts[31] = $obj12['results']['collection1'][1]['property2'];
 $posts[32] = $obj12['results']['collection1'][2]['property2'];
@@ -241,17 +235,45 @@ if ($obj14 === NULL) {
     return;
 }
 for ($num = 0; ; $num++) {
+    if ($obj14['results']['collection1'][$num]['property2'] == NULL) {
+        break;
+    }    
 	$posnum = 39 + $num;
 	$posts[$posnum] = $obj14['results']['collection1'][$num]['property2'];
 	echo $posts[$posnum];
 	echo "<br />";
-	if ($obj14['results']['collection1'][$num]['property2'] == NULL) {
-		break;
-	}
+}
+
+//15つ目（目黒）
+// ファイルからJSONを読み込み
+$json15 = file_get_contents("http://www.kimonolabs.com/api/9w1xwj9a?apikey=545c9d85d1f29d0b30b63d281e761220");
+// 文字化けするかもしれないのでUTF-8に変換
+$json15 = mb_convert_encoding($json15, 'UTF8', 'ASCII,JIS,UTF-8,EUC-JP,SJIS-WIN');
+// オブジェクト毎にパース
+// trueを付けると連想配列として分解して格納してくれます。
+$obj15 = json_decode($json15, true);
+// パースに失敗した時は処理終了
+if ($obj15 === NULL) {
+    return;
+}
+$postotal = (count($posts));
+echo "<br />";
+echo $postotal;
+for ($num = 0; ; $num++) {
+    if ($obj15['results']['collection1'][$num]['property2'] == NULL) {
+        break;
+    }
+    $posnum = $postotal + $num;
+    $posts[$posnum] = $obj15['results']['collection1'][$num]['property2'];
+    echo $posts[$posnum];
+    echo $posnum;
+    echo "<br />";
 }
 
 //乱数発生
-$intmn = mt_rand(0,33);
+echo (count($posts));
+echo "<br />";
+$intmn = mt_rand(0,$postotal);
 echo "$intmn";
 
 // twitteroauth.phpを読み込む。パスはあなたが置いた適切な場所に変更してください
